@@ -1,0 +1,91 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.head { max-width: 620px; margin-bottom: 3rem; }
+.title { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 1rem 0 1rem; }
+.lede { color: var(--text-dim); font-size: 1.05rem; }
+
+/* Fixed 3x2 showcase grid (6 featured drinks). Collapses to 2 cols, then 1. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 190px;
+  transition: border-color .3s var(--ease), transform .3s var(--ease), background .3s var(--ease);
+}
+.card:hover {
+  border-color: var(--border-gold-med);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+}
+
+.cardTop { display: flex; align-items: center; justify-content: space-between; }
+.cat {
+  font-size: .68rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.vol { font-size: .74rem; color: var(--text-faint); }
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading);
+  line-height: 1.15;
+  flex: 1;
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+.price { font-weight: 700; color: var(--text); font-size: 1.02rem; }
+
+.add {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .5rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-gold-med);
+  background: transparent;
+  color: var(--gold-light);
+  font-size: .82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.add:hover { background: var(--accent); color: #1a1206; border-color: var(--accent); }
+
+.empty { color: var(--text-dim); }
+.inlineLink { color: var(--accent); }
+
+.cta { margin-top: 2.5rem; }

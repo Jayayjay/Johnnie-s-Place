@@ -1,0 +1,58 @@
+.section {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-alt);
+  padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  border-top: 1px solid var(--border);
+}
+.head { max-width: 1180px; margin: 0 auto 2.6rem; }
+.title { font-size: clamp(2rem, 4.5vw, 3rem); margin: 1rem 0 1rem; }
+.lede { color: var(--text-dim); max-width: 46ch; }
+
+/* Four portrait photos in a row; collapses to 2x2, then a single column. */
+.grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--ease), filter .7s var(--ease);
+  filter: saturate(.96) brightness(.84);
+}
+.tile:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.05) brightness(1);
+}
+
+/* Subtle diagonal sheen that sweeps on hover. */
+.sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(230,196,114,.14) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .8s var(--ease);
+  pointer-events: none;
+}
+.tile:hover .sheen { transform: translateX(120%); }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; gap: 1rem; }
+  .tile { aspect-ratio: 4 / 3; }
+}

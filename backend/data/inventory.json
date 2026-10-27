@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Brutal Fruits Spritzer 275ml",
+    "price": 7000,
+    "stock": 119000,
+    "category": "Beer & Cider",
+    "volume": "275ml"
+  },
+  {
+    "name": "Castle lite (can) 330ml",
+    "price": 4000,
+    "stock": 32000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Castle lite 330ml",
+    "price": 4000,
+    "stock": 108000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Desperados 330ml",
+    "price": 7000,
+    "stock": 91000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Flying fish 330ml",
+    "price": 5000,
+    "stock": 60000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Guinness foreign extra stout 300ml",
+    "price": 4000,
+    "stock": 88000,
+    "category": "Beer & Cider",
+    "volume": "300ml"
+  },
+  {
+    "name": "Heineken 330ml",
+    "price": 7000,
+    "stock": 84000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Kilimanjaro can 330ml",
+    "price": 4000,
+    "stock": 68000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Kilimanjaro lager 500ml",
+    "price": 4000,
+    "stock": 240000,
+    "category": "Beer & Cider",
+    "volume": "500ml"
+  },
+  {
+    "name": "Kilimanjaro light 330ml",
+    "price": 4000,
+    "stock": 28000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Kilimanjaro premium lager 500ml",
+    "price": 4000,
+    "stock": 148000,
+    "category": "Beer & Cider",
+    "volume": "500ml"
+  },
+  {
+    "name": "Pilsner Lager 500ml",
+    "price": 3000,
+    "stock": 60000,
+    "category": "Beer & Cider",
+    "volume": "500ml"
+  },
+  {
+    "name": "Safari Lager 500ml",
+    "price": 4000,
+    "stock": 320000,
+    "category": "Beer & Cider",
+    "volume": "500ml"
+  },
+  {
+    "name": "Safari can 330ml",
+    "price": 4000,
+    "stock": 64000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Savanna 330ml",
+    "price": 7000,
+    "stock": 189000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Serengeti premium lager 500ml",
+    "price": 4000,
+    "stock": 160000,
+    "category": "Beer & Cider",
+    "volume": "500ml"
+  },
+  {
+    "name": "Serengeti premium lemon 300ml",
+    "price": 4000,
+    "stock": 80000,
+    "category": "Beer & Cider",
+    "volume": "300ml"
+  },
+  {
+    "name": "Serengeti premium lite 330ml",
+    "price": 4000,
+    "stock": 136000,
+    "category": "Beer & Cider",
+    "volume": "330ml"
+  },
+  {
+    "name": "Hennessy 20cl",
+    "price": 50000,
+    "stock": 50000,
+    "category": "Brandy & Cognac",
+    "volume": "20cl"
+  },
+  {
+    "name": "Hennessy 750 ml",
+    "price": 150000,
+    "stock": 150000,
+    "category": "Brandy & Cognac",
+    "volume": "750ml"
+  },
+  {
+    "name": "Valeur 750ml",
+    "price": 17000,
+    "stock": 17000,
+    "category": "Brandy & Cognac",
+    "volume": "750ml"
+  },
+  {
+    "name": "K Vant 250ml",
+    "price": 7000,
+    "stock": 140000,
+    "category": "Gin & Local Spirits",
+    "volume": "250ml"
+  },
+  {
+    "name": "K Vant 750ml",
+    "price": 17000,
+    "stock": 119000,
+    "category": "Gin & Local Spirits",
+    "volume": "750ml"
+  },
+  {
+    "name": "Konyagi 200ml",
+    "price": 7000,
+    "stock": 182000,
+    "category": "Gin & Local Spirits",
+    "volume": "200ml"
+  },
+  {
+    "name": "Konyagi 500ml",
+    "price": 12000,
+    "stock": 168000,
+    "category": "Gin & Local Spirits",
+    "volume": "500ml"
+  },
+  {
+    "name": "Amarula cream 375ml",
+    "price": 30000,
+    "stock": 30000,
+    "category": "Liqueur",
+    "volume": "375ml"
+  },
+  {
+    "name": "Amarula cream 750ml",
+    "price": 60000,
+    "stock": 60000,
+    "category": "Liqueur",
+    "volume": "750ml"
+  },
+  {
+    "name": "Drop of Zanzibar 1.5l",
+    "price": 1500,
+    "stock": 3000,
+    "category": "Liqueur",
+    "volume": "1.5l"
+  },
+  {
+    "name": "Zanzi Cream Liqueur 750ml",
+    "price": 50000,
+    "stock": 50000,
+    "category": "Liqueur",
+    "volume": "750ml"
+  },
+  {
+    "name": "Captain Morgan Gold 200ml",
+    "price": 20000,
+    "stock": 40000,
+    "category": "Rum",
+    "volume": "200ml"
+  },
+  {
+    "name": "Captain Morgan Gold 750ml",
+    "price": 40000,
+    "stock": 40000,
+    "category": "Rum",
+    "volume": "750ml"
+  },
+  {
+    "name": "Azam energy drink 300ml",
+    "price": 1000,
+    "stock": 48000,
+    "category": "Soft & Energy",
+    "volume": "300ml"
+  },
+  {
+    "name": "CocaCola 500ml",
+    "price": 1500,
+    "stock": 10500,
+    "category": "Soft & Energy",
+    "volume": "500ml"
+  },
+  {
+    "name": "Cuhai drinking water 500ml",
+    "price": 1000,
+    "stock": 14000,
+    "category": "Soft & Energy",
+    "volume": "500ml"
+  },
+  {
+    "name": "RedBull 250ml",
+    "price": 5000,
+    "stock": 35000,
+    "category": "Soft & Energy",
+    "volume": "250ml"
+  },
+  {
+    "name": "Sprite 500ml",
+    "price": 1500,
+    "stock": 6000,
+    "category": "Soft & Energy",
+    "volume": "500ml"
+  },
+  {
+    "name": "Cuca Vodka 200ml",
+    "price": 4000,
+    "stock": 360000,
+    "category": "Vodka",
+    "volume": "200ml"
+  },
+  {
+    "name": "Double Kick 200ml",
+    "price": 4000,
+    "stock": 240000,
+    "category": "Vodka",
+    "volume": "200ml"
+  },
+  {
+    "name": "Smirnoff 250ml",
+    "price": 20000,
+    "stock": 60000,
+    "category": "Vodka",
+    "volume": "250ml"
+  },
+  {
+    "name": "Black & White 20cl",
+    "price": 20000,
+    "stock": 40000,
+    "category": "Whisky",
+    "volume": "20cl"
+  },
+  {
+    "name": "Black & White 75cl",
+    "price": 60000,
+    "stock": 60000,
+    "category": "Whisky",
+    "volume": "75cl"
+  },
+  {
+    "name": "Grants Triple wood 750ml",
+    "price": 60000,
+    "stock": 120000,
+    "category": "Whisky",
+    "volume": "750ml"
+  },
+  {
+    "name": "Hanson’s choice 200ml",
+    "price": 7000,
+    "stock": 105000,
+    "category": "Whisky",
+    "volume": "200ml"
+  },
+  {
+    "name": "Jack Daniels 75cl",
+    "price": 120000,
+    "stock": 120000,
+    "category": "Whisky",
+    "volume": "75cl"
+  },
+  {
+    "name": "Johnnie Walker Red label 20cl",
+    "price": 25000,
+    "stock": 25000,
+    "category": "Whisky",
+    "volume": "20cl"
+  },
+  {
+    "name": "Justerini & Brooks Blended Scotch Whisky 1L",
+    "price": 100000,
+    "stock": 100000,
+    "category": "Whisky",
+    "volume": "1l"
+  },
+  {
+    "name": "Justerini & Brooks Blended Scotch Whisky 20cl",
+    "price": 20000,
+    "stock": 40000,
+    "category": "Whisky",
+    "volume": "20cl"
+  },
+  {
+    "name": "Justerini & Brooks Blended Scotch Whisky 75cl",
+    "price": 65000,
+    "stock": 65000,
+    "category": "Whisky",
+    "volume": "75cl"
+  },
+  {
+    "name": "Barepo Semi-Sweet Red wine 750ml",
+    "price": 25000,
+    "stock": 50000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Classic Dompo 750ml",
+    "price": 25000,
+    "stock": 75000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Dodoma Dry Red wine 750ml",
+    "price": 25000,
+    "stock": 75000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Dodoma Dry White wine 750ml",
+    "price": 25000,
+    "stock": 25000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Drostdy Hof dry White wine 375ml",
+    "price": 17000,
+    "stock": 17000,
+    "category": "Wine",
+    "volume": "375ml"
+  },
+  {
+    "name": "Drostdy Hof dry White wine 750ml",
+    "price": 25000,
+    "stock": 25000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Drostdy Hof dry red wine 750ml",
+    "price": 25000,
+    "stock": 50000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Four cousins natural sweet white wine 750ml",
+    "price": 25000,
+    "stock": 25000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Pearly Bay 750ml",
+    "price": 25000,
+    "stock": 50000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Robertson Winery red wine 750ml",
+    "price": 25000,
+    "stock": 50000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Robertson Winery white wine 750ml",
+    "price": 25000,
+    "stock": 25000,
+    "category": "Wine",
+    "volume": "750ml"
+  },
+  {
+    "name": "Saint Anna 750ml",
+    "price": 25000,
+    "stock": 50000,
+    "category": "Wine",
+    "volume": "750ml"
+  }
+]

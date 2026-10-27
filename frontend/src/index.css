@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Archivo:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Backlit-bar / amber-whisky palette */
+  --bg:              #0b0906;
+  --bg-alt:          #0f0b07;
+  --bg-dark:         #070503;
+  --bg-card:         #15100a;
+  --bg-card-hover:   #1d150d;
+  --bg-panel:        #120d08;
+  --bg-marq:         #0d0a06;
+
+  --text:            #ece2d2;
+  --text-muted:      #9a8d79;
+  --text-dim:        #b9ab95;
+  --text-faint:      #6d6355;
+  --text-footer:     #7b7062;
+  --heading:         #f1e7d4;
+
+  --accent:          #d99a3a;   /* amber whisky */
+  --accent-deep:     #b0742a;
+  --gold:            #c9a24a;
+  --gold-light:      #e6c472;
+  --wine:            #7c2b32;    /* deep wine-red for contrast accents */
+
+  --border:          rgba(255,255,255,.06);
+  --border-soft:     rgba(255,255,255,.085);
+  --border-med:      rgba(255,255,255,.11);
+  --border-gold:     rgba(217,154,58,.20);
+  --border-gold-med: rgba(217,154,58,.42);
+
+  --shadow-card:  0 2px 8px rgba(0,0,0,.35), 0 8px 32px rgba(0,0,0,.3);
+  --shadow-hover: 0 8px 28px rgba(0,0,0,.55), 0 20px 60px rgba(0,0,0,.35);
+  --shadow-btn:   0 4px 16px rgba(0,0,0,.45);
+  --glow-amber:   0 0 40px rgba(217,154,58,.22);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'Archivo', system-ui, -apple-system, sans-serif;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --nav-h: 68px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  font-family: var(--font-sans);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::selection {
+  background: var(--accent);
+  color: #1a1206;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+input, textarea, button, select { font-family: inherit; }
+ul, ol { list-style: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

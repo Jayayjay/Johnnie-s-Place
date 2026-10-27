@@ -1,0 +1,15 @@
+/* Fixed canvas behind the hero; the hero content sits above it (transparent bg)
+   so the shelf shows through only during the opening screens. */
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

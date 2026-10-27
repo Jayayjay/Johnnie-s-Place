@@ -1,0 +1,154 @@
+.hero {
+  position: relative;
+  z-index: 0;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: var(--nav-h) clamp(1.25rem, 6vw, 6rem) 4rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Fallback shown while the 3D chunk loads. */
+.bgFallback {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(60% 50% at 70% 35%, rgba(217,154,58,.18), transparent 70%),
+    var(--bg);
+}
+
+/* Darkens the lower-left so the headline stays legible over the 3D scene. */
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7,5,3,.86) 0%, rgba(7,5,3,.5) 42%, transparent 72%),
+    linear-gradient(0deg, var(--bg) 2%, transparent 38%);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .85rem;
+  border: 1px solid var(--border-gold);
+  border-radius: 999px;
+  background: rgba(217,154,58,.06);
+  margin-bottom: 1.6rem;
+}
+.badgeDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: blink 2.4s ease-in-out infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+.badgeText {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: .98;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+.block { display: block; }
+.accent {
+  display: block;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.sub {
+  margin-top: 1.5rem;
+  max-width: 48ch;
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  color: var(--text-dim);
+}
+
+.trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-top: 1.8rem;
+}
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  color: var(--text-muted);
+}
+.trustIcon { color: var(--accent); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .85rem;
+  margin-top: 2.2rem;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+.scrollLine {
+  width: 1px; height: 38px;
+  background: linear-gradient(var(--accent), transparent);
+  animation: drip 2s ease-in-out infinite;
+}
+@keyframes drip {
+  0%   { transform: scaleY(.3); transform-origin: top; opacity: .4; }
+  50%  { transform: scaleY(1);  transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(.3); transform-origin: top; opacity: .4; }
+}
+.scrollLabel {
+  font-size: .64rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Staggered entrance (ported from the template's Hero) */
+.item {
+  opacity: 0;
+  transform: translateY(22px);
+}
+.animate {
+  animation: rise .9s var(--ease) forwards;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes rise {
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 860px) {
+  .vignette {
+    background:
+      linear-gradient(0deg, var(--bg) 6%, rgba(7,5,3,.6) 40%, rgba(7,5,3,.3) 100%);
+  }
+}
