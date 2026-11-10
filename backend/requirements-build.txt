@@ -1,0 +1,9 @@
+# Build/dev-only extras — NOT needed at runtime (don't deploy these to Vercel).
+# Install on top of requirements.txt for local work:
+#   pip install -r requirements.txt -r requirements-build.txt
+#
+#   pyrosm + networkx : one-time `manage.py build_delivery_graph` (road-distance artifact)
+#   numbers-parser    : one-time `scripts/extract_inventory.py` (catalog from the .numbers file)
+pyrosm==0.29.0
+networkx==3.7
+numbers-parser==4.22.0

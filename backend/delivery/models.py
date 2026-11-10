@@ -60,6 +60,11 @@ class Order(models.Model):
     phone = models.CharField(max_length=32)
     address = models.TextField()
     note = models.TextField(blank=True)
+    # Drop-off location + the road distance used to price delivery.
+    lat = models.FloatField(null=True, blank=True)
+    lng = models.FloatField(null=True, blank=True)
+    distance_km = models.FloatField(null=True, blank=True)
+    fee_breakdown = models.JSONField(default=dict, blank=True)
     status = models.CharField(
         max_length=20, choices=Status.choices, default=Status.PENDING
     )

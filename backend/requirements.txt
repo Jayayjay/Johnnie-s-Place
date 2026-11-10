@@ -1,7 +1,13 @@
-asgiref==3.13.0
+# Runtime dependencies (used by Vercel). Keep this lean — the serverless bundle has
+# a size limit. Heavy, build-only packages (pyrosm/networkx for the road graph,
+# numbers-parser for inventory extraction) live in requirements-build.txt.
 Django==6.1.2
-django-cors-headers==4.9.0
 djangorestframework==3.18.3
-numbers-parser==4.22.0
+django-cors-headers==4.9.0
 python-dotenv==1.2.4
-sqlparse==0.6.0
+google-auth==2.62.0
+numpy==2.5.4
+# Postgres support (local dev uses SQLite unless DATABASE_URL is set; Vercel needs
+# an external DB because its filesystem is ephemeral/read-only).
+dj-database-url==2.3.0
+psycopg[binary]>=3.1,<4
