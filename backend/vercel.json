@@ -9,7 +9,8 @@
           "config/**",
           "delivery/**",
           "accounts/**",
-          "staticfiles/**"
+          "staticfiles/**",
+          "spa/**"
         ]
       }
     }

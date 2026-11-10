@@ -95,11 +95,33 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"   # `collectstatic` target; served by WhiteNoise
+STATIC_ROOT = BASE_DIR / "staticfiles"   # `collectstatic` target; admin assets, served at /static/
 STORAGES = {
     "default": {"BACKEND": "django.core.files.storage.FileSystemStorage"},
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
 }
+
+# Built React SPA. When present, WhiteNoise serves the whole dist at the root
+# (/, /assets/*, /images/*, /models/*, /favicon.svg); the SPA catch-all in urls.py
+# returns index.html for client-side routes. Admin static stays at /static/.
+#   - Deploy (Vercel): the build is copied to backend/spa (a sibling dir can't be
+#     bundled into the function), so that's preferred when it exists.
+#   - Local dev: falls back to the live frontend/dist produced by the build watcher.
+_spa_env = os.getenv("FRONTEND_DIST")
+_dev_dist = BASE_DIR.parent / "frontend" / "dist"   # live build (rebuilt by the watcher)
+_bundled = BASE_DIR / "spa"                         # deploy copy bundled with the backend
+if _spa_env:
+    FRONTEND_DIST = Path(_spa_env)
+elif DEBUG and _dev_dist.is_dir():
+    FRONTEND_DIST = _dev_dist          # local dev: always serve the live build
+elif _bundled.is_dir():
+    FRONTEND_DIST = _bundled           # deploy
+else:
+    FRONTEND_DIST = _dev_dist
+if FRONTEND_DIST.is_dir():
+    WHITENOISE_ROOT = FRONTEND_DIST
+    WHITENOISE_INDEX_FILE = True
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
