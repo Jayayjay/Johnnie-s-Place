@@ -9,16 +9,6 @@
   isolation: isolate;
 }
 
-/* Fallback shown while the 3D chunk loads. */
-.bgFallback {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(60% 50% at 70% 35%, rgba(217,154,58,.18), transparent 70%),
-    var(--bg);
-}
-
 /* Darkens the lower-left so the headline stays legible over the 3D scene. */
 .vignette {
   position: absolute;
@@ -107,17 +97,25 @@
 
 .scrollHint {
   position: absolute;
-  bottom: 1.8rem;
+  bottom: 1.6rem;
   left: 50%;
-  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .5rem;
+  gap: .55rem;
+  /* Own fade-in that preserves the horizontal centring (the shared .item/.animate
+     entrance would overwrite transform and knock this off-centre). */
+  opacity: 0;
+  transform: translateX(-50%);
+  animation: scrollFade .9s var(--ease) 1.3s forwards;
+}
+@keyframes scrollFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .scrollLine {
-  width: 1px; height: 38px;
+  width: 1px; height: 40px;
   background: linear-gradient(var(--accent), transparent);
   animation: drip 2s ease-in-out infinite;
 }

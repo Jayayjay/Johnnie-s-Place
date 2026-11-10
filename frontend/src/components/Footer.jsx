@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.brandCol}>
           <Link to="/" className={styles.brand}>
             <span className={styles.glyph}>J</span>
-            <span className={styles.name}>Johnnie's <em>Place</em></span>
+            <span className={styles.name}>Johnnie's <em>Pub</em></span>
           </Link>
           <p className={styles.tagline}>{BRAND.tagline}</p>
         </div>

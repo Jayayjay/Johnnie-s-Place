@@ -1,0 +1,20 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1.4rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+  background: #25d366;
+  color: #07351a;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s var(--ease), filter .2s var(--ease), box-shadow .2s var(--ease);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, .25);
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.05); box-shadow: 0 6px 22px rgba(37, 211, 102, .35); }
+.block { display: flex; width: 100%; }
+.disabled { background: #2a3b31; color: var(--text-muted); cursor: not-allowed; box-shadow: none; }
+.disabled:hover { transform: none; filter: none; }

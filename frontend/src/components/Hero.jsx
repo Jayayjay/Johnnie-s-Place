@@ -1,12 +1,8 @@
-import { Suspense, lazy, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Truck, Wine, Clock } from 'lucide-react'
 import { BRAND } from '../config'
-import ErrorBoundary from './ErrorBoundary'
 import styles from './Hero.module.css'
-
-// 3D layer loads on demand so the first paint isn't blocked by three.js.
-const Bottle3D = lazy(() => import('./Bottle3D'))
 
 const TRUST_ITEMS = [
   { Icon: Truck, label: 'Same-night delivery' },
@@ -31,12 +27,6 @@ export default function Hero() {
 
   return (
     <header id="top" className={styles.hero}>
-      <ErrorBoundary fallback={<div className={styles.bgFallback} aria-hidden="true" />}>
-        <Suspense fallback={<div className={styles.bgFallback} aria-hidden="true" />}>
-          <Bottle3D />
-        </Suspense>
-      </ErrorBoundary>
-
       <div className={styles.vignette} aria-hidden="true" />
 
       <div className={styles.content}>
@@ -72,9 +62,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className={styles.scrollHint} {...anim('1.3s')} aria-hidden="true">
-        <span className={styles.scrollLine} />
+      <div className={styles.scrollHint} aria-hidden="true">
         <span className={styles.scrollLabel}>Scroll</span>
+        <span className={styles.scrollLine} />
       </div>
     </header>
   )

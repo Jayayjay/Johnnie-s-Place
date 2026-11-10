@@ -1,7 +1,7 @@
 .section {
   position: relative;
   z-index: 1;
-  background: var(--bg);
+  background: transparent;
   padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 5rem);
 }
 .panel {

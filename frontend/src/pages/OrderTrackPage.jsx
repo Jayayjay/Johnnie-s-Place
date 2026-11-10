@@ -121,6 +121,11 @@ export default function OrderTrackPage() {
 
               <div className={styles.actions}>
                 <Link to="/menu" className="btn btn-ghost">Order Again</Link>
+                {order.cancellable && (
+                  <Link to={`/order/${order.id}/cancel`} className={styles.cancelLink}>
+                    Cancel order
+                  </Link>
+                )}
               </div>
             </>
           )}

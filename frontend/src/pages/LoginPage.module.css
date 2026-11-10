@@ -1,0 +1,68 @@
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 2rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.card {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1.8rem, 5vw, 2.6rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.glyph {
+  display: grid;
+  place-items: center;
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #1a1206;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.title { font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.sub { color: var(--text-dim); max-width: 36ch; }
+
+.signin { margin: .8rem 0 .4rem; min-height: 46px; display: flex; justify-content: center; }
+.busy { color: var(--text-dim); font-size: .9rem; }
+
+.error {
+  width: 100%;
+  padding: .7rem .9rem;
+  border-radius: 10px;
+  background: rgba(192,90,58,.1);
+  border: 1px solid rgba(192,90,58,.3);
+  color: #e0917f;
+  font-size: .86rem;
+}
+
+.note {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .8rem;
+  color: var(--text-muted);
+  max-width: 40ch;
+  line-height: 1.5;
+}
+.note svg { color: var(--accent); flex-shrink: 0; }
+
+.back {
+  font-size: .85rem;
+  color: var(--text-muted);
+  transition: color .2s var(--ease);
+}
+.back:hover { color: var(--gold-light); }

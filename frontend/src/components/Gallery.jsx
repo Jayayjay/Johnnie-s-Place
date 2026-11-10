@@ -1,12 +1,14 @@
 import useInView from '../hooks/useInView'
 import styles from './Gallery.module.css'
 
-// Real room photography (portrait). Served from public/images/room/.
+// Real photos of the bar. Served from public/images/room/.
 const SHOTS = [
-  { src: '/images/room/shelf-warm.webp',       alt: 'Backlit bottle shelf glowing amber and red' },
-  { src: '/images/room/cocktails-lineup.webp', alt: 'A line-up of garnished cocktails along the bar' },
-  { src: '/images/room/cocktails-bar.webp',    alt: 'Two cocktails resting on the counter' },
-  { src: '/images/room/shelf-neon.webp',       alt: 'Spirits shelf washed in blue neon light' },
+  { src: '/images/room/bar-counter.webp', alt: 'The bar counter and backlit bottle shelf under the BAR marquee' },
+  { src: '/images/room/room-wide.webp',   alt: 'The room — long tables, bar stools and the Tanzanian flag' },
+  { src: '/images/room/mural.webp',       alt: 'Hand-painted mural of a lively bar on the wall' },
+  { src: '/images/room/bar-shelf.webp',   alt: 'Spirits and wines on the shelf beside the Pepsi fridge' },
+  { src: '/images/room/room-tables.webp', alt: 'Wooden tables and high stools across the room' },
+  { src: '/images/room/bar-stools.webp',  alt: 'Mint bar stools along the granite counter' },
 ]
 
 export default function Gallery() {
@@ -17,7 +19,8 @@ export default function Gallery() {
         <span className="kicker">The Room</span>
         <h2 className={`serif-title ${styles.title}`}>Low light, loud nights</h2>
         <p className={styles.lede}>
-          Warm shelves, cold glasses and a long bar. A look inside Johnnie's Place.
+          A neighbourhood bar in Zanzibar — cold fridges, a long granite counter and a wall
+          worth a photo. Come as you are.
         </p>
       </div>
       <div className={styles.grid}>
@@ -25,7 +28,7 @@ export default function Gallery() {
           <figure
             key={s.src}
             className={`${styles.tile} reveal ${inView ? 'in' : ''}`}
-            style={{ transitionDelay: `${i * 0.08}s` }}
+            style={{ transitionDelay: `${i * 0.07}s` }}
           >
             <img src={s.src} alt={s.alt} loading="lazy" />
             <span className={styles.sheen} aria-hidden="true" />

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   z-index: 1;
-  background: var(--bg);
+  background: transparent;
   padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 5vw, 5rem);
   border-top: 1px solid var(--border);
 }

@@ -1,7 +1,7 @@
 .section {
   position: relative;
   z-index: 1;
-  background: var(--bg-alt);
+  background: transparent;
   padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
   border-top: 1px solid var(--border);
 }
@@ -9,18 +9,18 @@
 .title { font-size: clamp(2rem, 4.5vw, 3rem); margin: 1rem 0 1rem; }
 .lede { color: var(--text-dim); max-width: 46ch; }
 
-/* Four portrait photos in a row; collapses to 2x2, then a single column. */
+/* Six square photos; 3 across → 2 → 1. */
 .grid {
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .tile {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);

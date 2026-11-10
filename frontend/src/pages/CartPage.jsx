@@ -1,16 +1,19 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Minus, Plus, Trash2, ArrowRight, ShoppingBag } from 'lucide-react'
+import { Minus, Plus, Trash2, ArrowRight, ShoppingBag, MessageCircle } from 'lucide-react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import ContactBarModal from '../components/ContactBarModal'
 import { useCart } from '../context/CartContext'
 import { formatTZS } from '../utils/format'
-import { DELIVERY_FEE } from '../config'
+import { MIN_ONLINE_ORDER } from '../config'
 import styles from './CartPage.module.css'
 
 export default function CartPage() {
   const { items, subtotal, setQty, remove, count } = useCart()
   const navigate = useNavigate()
-  const total = subtotal + (items.length ? DELIVERY_FEE : 0)
+  const [contactOpen, setContactOpen] = useState(false)
+  const meetsMinimum = subtotal >= MIN_ONLINE_ORDER
 
   return (
     <>
@@ -64,21 +67,41 @@ export default function CartPage() {
                 </div>
                 <div className={styles.sumRow}>
                   <span>Delivery</span>
-                  <span>{formatTZS(DELIVERY_FEE)}</span>
+                  <span className={styles.muted}>by distance, at checkout</span>
                 </div>
                 <div className={`${styles.sumRow} ${styles.total}`}>
-                  <span>Total</span>
-                  <span>{formatTZS(total)}</span>
+                  <span>Subtotal</span>
+                  <span>{formatTZS(subtotal)}</span>
                 </div>
-                <button className={`btn btn-primary ${styles.checkout}`} onClick={() => navigate('/checkout')}>
-                  Checkout <ArrowRight size={17} />
-                </button>
+
+                {meetsMinimum ? (
+                  <button className={`btn btn-primary ${styles.checkout}`} onClick={() => navigate('/checkout')}>
+                    Checkout <ArrowRight size={17} />
+                  </button>
+                ) : (
+                  <div className={styles.belowMin}>
+                    <p className={styles.belowMinMsg}>
+                      Online orders start at {formatTZS(MIN_ONLINE_ORDER)} — you're {formatTZS(MIN_ONLINE_ORDER - subtotal)} away.
+                      Add more, or order this straight from the bar.
+                    </p>
+                    <button className={`btn btn-primary ${styles.checkout}`} onClick={() => setContactOpen(true)}>
+                      <MessageCircle size={17} /> Contact the Bar
+                    </button>
+                  </div>
+                )}
                 <Link to="/menu" className={styles.continue}>← Add more drinks</Link>
               </aside>
             </div>
           )}
         </div>
       </main>
+      <ContactBarModal
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+        items={items}
+        subtotal={subtotal}
+        message={`Online delivery starts at ${formatTZS(MIN_ONLINE_ORDER)}. For a smaller order, reach us directly and we'll sort you out.`}
+      />
       <Footer />
     </>
   )

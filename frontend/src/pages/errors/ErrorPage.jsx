@@ -43,7 +43,7 @@ export default function ErrorPage({ code = 404 }) {
       <header className={styles.topBar}>
         <Link to="/" className={styles.wordmark}>
           <span className={styles.glyph}>J</span>
-          <span className={styles.logotype}>Johnnie's <em>Place</em></span>
+          <span className={styles.logotype}>Johnnie's <em>Pub</em></span>
         </Link>
         <div
           className={styles.badge}

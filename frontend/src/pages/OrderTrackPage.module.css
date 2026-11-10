@@ -103,7 +103,13 @@
 }
 .deliverLabel { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-faint); }
 
-.actions { margin-top: 2rem; }
+.actions { margin-top: 2rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.cancelLink {
+  font-size: .85rem;
+  color: var(--text-muted);
+  transition: color .2s var(--ease);
+}
+.cancelLink:hover { color: #d4766a; }
 
 @media (max-width: 560px) {
   .stepLabel { font-size: .68rem; }

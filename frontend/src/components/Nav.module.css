@@ -63,6 +63,86 @@
 
 .actions { display: flex; align-items: center; gap: .4rem; }
 
+/* Sign-in link (logged out) */
+.signin {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-med);
+  color: var(--text-dim);
+  font-size: .85rem;
+  font-weight: 500;
+  transition: border-color .2s var(--ease), color .2s var(--ease);
+}
+.signin:hover { border-color: var(--border-gold-med); color: var(--gold-light); }
+
+/* Account menu (logged in) */
+.account { position: relative; }
+.accountBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .35rem .7rem .35rem .4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-med);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color .2s var(--ease);
+}
+.accountBtn:hover { border-color: var(--border-gold-med); }
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #1a1206;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.accountName { font-size: .85rem; }
+
+.menu {
+  position: absolute;
+  top: calc(100% + .5rem);
+  right: 0;
+  min-width: 200px;
+  background: rgba(16, 12, 8, .98);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-med);
+  border-radius: 12px;
+  padding: .5rem;
+  box-shadow: var(--shadow-hover);
+}
+.menuEmail {
+  padding: .5rem .6rem;
+  font-size: .78rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: .4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menuItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .6rem;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: .86rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.menuItem:hover { background: var(--bg-card-hover); color: var(--gold-light); }
+
 .cart {
   position: relative;
   display: grid;
@@ -97,6 +177,12 @@
   color: var(--text);
   cursor: pointer;
   padding: .35rem;
+}
+
+@media (max-width: 460px) {
+  .signinText, .accountName { display: none; }
+  .signin { padding: .5rem; }
+  .accountBtn { padding: .35rem; }
 }
 
 @media (max-width: 860px) {

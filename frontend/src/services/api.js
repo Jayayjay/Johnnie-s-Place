@@ -1,15 +1,26 @@
 import { API_URL } from '../config'
 
+// Current DRF auth token (set by AuthContext). Attached as `Authorization: Token …`
+// on every request when present.
+let authToken = null
+export function setAuthToken(token) {
+  authToken = token || null
+}
+
 // Single fetch wrapper: JSON in/out, timeout, consistent error surface.
 async function request(path, { method = 'GET', body, signal, timeout = 15000 } = {}) {
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), timeout)
   if (signal) signal.addEventListener('abort', () => controller.abort())
 
+  const headers = {}
+  if (body) headers['Content-Type'] = 'application/json'
+  if (authToken) headers.Authorization = `Token ${authToken}`
+
   try {
     const res = await fetch(`${API_URL}${path}`, {
       method,
-      headers: body ? { 'Content-Type': 'application/json' } : undefined,
+      headers,
       body: body ? JSON.stringify(body) : undefined,
       signal: controller.signal,
     })
@@ -45,4 +56,14 @@ export const api = {
   product: (slug) => request(`/products/${slug}/`),
   createOrder: (payload) => request('/orders/', { method: 'POST', body: payload }),
   order: (id) => request(`/orders/${id}/`),
+  deliveryQuote: ({ subtotal, lat, lng }) =>
+    request('/delivery/quote/', { method: 'POST', body: { subtotal, lat, lng } }),
+  cancelOrder: (id, reason) =>
+    request(`/orders/${id}/cancel/`, { method: 'POST', body: { reason: reason || '' } }),
+
+  // Auth
+  googleAuth: (credential) =>
+    request('/auth/google/', { method: 'POST', body: { credential } }),
+  me: () => request('/auth/me/'),
+  logout: () => request('/auth/logout/', { method: 'POST' }),
 }
