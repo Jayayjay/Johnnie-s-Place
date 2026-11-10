@@ -4,7 +4,14 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python",
-      "config": { "includeFiles": ["delivery/data/delivery_graph.pkl", "staticfiles/**"] }
+      "config": {
+        "includeFiles": [
+          "config/**",
+          "delivery/**",
+          "accounts/**",
+          "staticfiles/**"
+        ]
+      }
     }
   ],
   "routes": [
